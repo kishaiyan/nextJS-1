@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link";
 import {useRouter} from "next/navigation";
 import axios from "axios";
-import {toast} from "react-hot-toast";
+import {toast, Toaster} from "react-hot-toast";
 
 export default function LoginPage() {
   const router=useRouter();
@@ -33,7 +33,7 @@ export default function LoginPage() {
       console.log("Login Success",response)
       toast.success("Login Success")
       router.push("/profile")
-      
+
     } catch (error:any) {
       console.log("Login failed",error.message);
       toast.error(error.message);
@@ -46,6 +46,10 @@ export default function LoginPage() {
 
   return(
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
+      <Toaster
+      position="top-center"
+      reverseOrder={false}
+      />
     <h1 className="text-center text-white text-2xl">Login</h1>
     <label htmlFor="username">Email</label>
     <input
