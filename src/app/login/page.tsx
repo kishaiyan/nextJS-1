@@ -44,6 +44,8 @@ export default function LoginPage() {
   }
   
 
+ 
+
   return(
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Toaster
@@ -80,6 +82,7 @@ export default function LoginPage() {
       className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600" >
         {buttondisabled? "Enter Credentials":"Login"}
       </button>
+      <Link className="p-2 mb-4 text-blue focus:outline-none focus:border-gray-600" href="/sendreset">Forgot password?</Link>
       <Link className="p-2 mb-4 focus:outline-none focus:border-gray-600" href="/signup">Sign Up</Link>
       </div>
   )
